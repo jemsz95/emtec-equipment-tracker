@@ -1,0 +1,6 @@
+# Context path to install this application on
+app.path=/equipment-tracker
+
+# Manager webapp username and password
+manager.username=bot
+manager.password=dodecahedron

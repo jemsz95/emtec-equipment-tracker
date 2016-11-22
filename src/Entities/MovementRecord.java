@@ -30,25 +30,30 @@ public class MovementRecord {
     
     //Date format dd/mm/yyyy
     //Time 12:00 (hr.min)
-    public void registerMovement(int idDevice, int idEquipment, String locationName, String date, String time){
-      try{ 
-        String query = "INSERT INTO MovementRecord (idDevice, idEquipment, locationName, date, time) Values (?,?,?,?,?)";
-        pstmt = con.prepareStatement(query);
-        pstmt.setInt(1, idDevice);
-        pstmt.setInt(2, idEquipment);
-        pstmt.setString(3, locationName);
-        pstmt.setString(4, date);
-        pstmt.setString(5, time);
-        pstmt.execute();
-      }catch (SQLException e) {
-          System.out.println("Can't execute registerMovement() to table MovementRecord" + e);
-      }   
+    public boolean registerMovement(int idDevice, int idEquipment, String locationName, String date, String time){
+        boolean result = false;
+        try{ 
+            String query = "INSERT INTO MovementRecord (idDevice, idEquipment, locationName, date, time) Values (?,?,?,?,?)";
+            pstmt = con.prepareStatement(query);
+            pstmt.setInt(1, idDevice);
+            pstmt.setInt(2, idEquipment);
+            pstmt.setString(3, locationName);
+            pstmt.setString(4, date);
+            pstmt.setString(5, time);
+            pstmt.execute();
+            result=true;
+        }catch (SQLException e) {
+            result=false;
+            System.out.println("Can't execute registerMovement() to table MovementRecord" + e);
+        }   
+        return result;
     }
-    /*
+    
     public static void main(String[] args) {
         MovementRecord mr = new MovementRecord();
         mr.registerMovement(1,1,"bath","13/06/95","12:30");
         
     }
-    */
+    
+
 }

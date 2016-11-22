@@ -28,23 +28,42 @@ public class Report {
         con = dbHelper.getdbConnection();
     }
     
-    public void register(int idEquipment, String equipmentComment) {
+    public boolean register(int idEquipment, String equipmentComment) {
+        boolean result=false;
         try {
             String query = "INSERT INTO Report (idEquipment, equipmentComment) VALUES (?,?)";
             pstmt = con.prepareStatement(query);
             pstmt.setInt(1, idEquipment);
             pstmt.setString(2, equipmentComment);
             pstmt.execute();
+            result=true;
         } catch (SQLException e){
+            result=false;
             System.out.println ("Can't execute register(idEquipment, equipmentComment)" + e);
         }
+        return result;
     }
-    /*
+    
+    public boolean deleteReport(int idReport){
+        boolean success=false;
+        try{
+            String query = "DELETE FROM Report WHERE id = (?)";
+            pstmt = con.prepareStatement(query);
+            pstmt.setInt(1, idReport);
+            pstmt.execute();
+            success=true;
+        } catch (SQLException e) {
+            success=false;
+            System.out.println("Can't execute deleteReport() to table Equipment" + e);
+        }
+        return success;
+    }
+    
+    
     public static void main(String[] args) {
         Report rp = new Report();
         rp.register(1,"This equipment is failing");   
     }
-    */
 }
 
     

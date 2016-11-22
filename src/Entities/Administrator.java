@@ -56,11 +56,11 @@ public class Administrator extends User {
             System.out.println("Can't execute registerAdmin() to table User" + e);
         }
     }
-   /* 
+    
     public static void main(String[] args) {
         Administrator ad = new Administrator();
         //ad.registerAdmin("luis","bryan","vampbryan","1234");
         ad.authenticate("vampbryan", "1234");
     }
-   */  
+       
 }

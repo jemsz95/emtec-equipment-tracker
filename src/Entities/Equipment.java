@@ -31,15 +31,20 @@ public class Equipment {
         con = dbHelper.getdbConnection();
     }
     
-    public void registerEquipment(String equipmentName){
+    public boolean registerEquipment(String equipmentName,String category){
+        boolean success=false;
         try{
-            String query = "INSERT INTO Equipment (name) VALUES (?)";
+            String query = "INSERT INTO Equipment (name, category) VALUES (?,?)";
             pstmt = con.prepareStatement(query);
             pstmt.setString(1, equipmentName);
+            pstmt.setString(2, category);
             pstmt.execute();
+            success=true;
         } catch (SQLException e) {
+            success=false;
             System.out.println("Can't execute register() to table Equipment" + e);
         }
+        return success;
     }
 
     public JSONArray searchEquipment(String equipmentName){
@@ -56,11 +61,43 @@ public class Equipment {
         }
         return jsonArray;
     }
-    /* 
+    
+    public boolean updateEquipment(int idEquipment, String equipmentName){
+        boolean success=false;
+        try{
+            String query = "UPDATE Equipment SET name = (?) WHERE id = (?) ";
+            pstmt = con.prepareStatement(query);
+            pstmt.setString(1, equipmentName);
+            pstmt.setInt(2, idEquipment);
+            pstmt.execute();
+            success=true;
+        } catch (SQLException e) {
+            success=false;
+            System.out.println("Can't execute updateEquipment() to table Equipment" + e);
+        }
+        return success;
+    }
+    
+    public boolean deleteEquipment(int idEquipment){
+        boolean success=false;
+        try{
+            String query = "DELETE FROM Equipment WHERE id = (?)";
+            pstmt = con.prepareStatement(query);
+            pstmt.setInt(1, idEquipment);
+            pstmt.execute();
+            success=true;
+        } catch (SQLException e) {
+            success=false;
+            System.out.println("Can't execute deleteEquipment() to table Equipment" + e);
+        }
+        return success;
+    }
+    
     public static void main(String[] args) {
         Equipment eq = new Equipment();
-        eq.searchEquipment("equipmentTestName1");
-        
+        //eq.searchEquipment("equipmentTestName1");
+        //eq.updateEquipment(1, "newName");
+        //eq.deleteEquipment(1);
     }
-    */
+    
 }

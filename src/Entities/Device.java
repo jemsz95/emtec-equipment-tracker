@@ -32,15 +32,19 @@ public class Device {
         con = dbHelper.getdbConnection();
     }
     
-    public void registerDevice(String deviceName){
+    public boolean registerDevice(String deviceName){
+        boolean result = false;
         try{
             String query = "INSERT INTO Device (name) VALUES (?)";
             pstmt = con.prepareStatement(query);
             pstmt.setString(1, deviceName);
             pstmt.execute();
+            result=true;
         } catch (SQLException e) {
+            result=false;
             System.out.println("Can't execute register() to table Equipment" + e);
         }
+        return result;
     }
 
     public JSONArray searchDevice(String deviceName){
@@ -61,11 +65,41 @@ public class Device {
         }
         return jsonArray;
     }
-   /* 
+    
+    public boolean updateDevice(int idDevice, String deviceName){
+        boolean success=false;
+        try{
+            String query = "UPDATE Device SET name = (?) WHERE id = (?) ";
+            pstmt = con.prepareStatement(query);
+            pstmt.setString(1, deviceName);
+            pstmt.setInt(2, idDevice);
+            pstmt.execute();
+            success=true;
+        } catch (SQLException e) {
+            success=false;
+            System.out.println("Can't execute updateDevice() to table Equipment" + e);
+        }
+        return success;
+    }
+    
+    public boolean deleteDevice(int idDevice){
+        boolean success=false;
+        try{
+            String query = "DELETE FROM Device WHERE id = (?)";
+            pstmt = con.prepareStatement(query);
+            pstmt.setInt(1, idDevice);
+            pstmt.execute();
+            success=true;
+        } catch (SQLException e) {
+            success=false;
+            System.out.println("Can't execute deleteDevice() to table Equipment" + e);
+        }
+        return success;
+    }
+    
     public static void main(String[] args) {
         Device dv = new Device();
         //dv.registerDevice("deviceNameTest");
         dv.searchDevice("deviceNameTest");
     }
-    */
 }

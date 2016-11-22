@@ -1,4 +1,4 @@
-export interface MovementRecord {
+export class MovementRecord {
   locationName: string;
   date: Date;
   time: Date;

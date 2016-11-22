@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   'selector': 'nav',
   'templateUrl': 'app/nav.component.html',
   'styles': [
-    '.nav { background-color: #00d1b2; }'
+    '.nav { background-color: #00d1b2; }',
     '.title { color: #ffffff; }'
   ]
 })

@@ -127,7 +127,7 @@
   <property name="app.name"      value="equipment-tracker"/>
   <property name="app.path"      value="/${app.name}"/>
   <property name="app.version"   value="1.0.0"/>
-  <property name="build.home"    value="${basedir}/web"/>
+  <property name="build.home"    value="${basedir}/build"/>
   <property name="catalina.home" value="${env.CATALINA_HOME}"/>
   <property name="dist.home"     value="${basedir}/dist"/>
   <property name="docs.home"     value="${basedir}/docs"/>
@@ -178,7 +178,7 @@
   <path id="compile.classpath">
 
     <!-- Include all JAR files that will be included in /WEB-INF/lib -->
-    <fileset dir="${build.home}/WEB-INF/lib">
+    <fileset dir="${web.home}/WEB-INF/lib">
       <include name="*.jar"/>
     </fileset>
 
@@ -431,28 +431,16 @@ includeantruntime="false"
 -->
 
   <target name="prepare">
-
     <!-- Create build directories as needed -->
     <mkdir  dir="${build.home}"/>
     <mkdir  dir="${build.home}/WEB-INF"/>
     <mkdir  dir="${build.home}/WEB-INF/classes"/>
-
+    <mkdir  dir="${build.home}/WEB-INF/lib"/>
 
     <!-- Copy static content of this web application -->
     <copy todir="${build.home}">
       <fileset dir="${web.home}"/>
     </copy>
-
-    <!-- Copy external dependencies as required -->
-    <!-- *** CUSTOMIZE HERE AS REQUIRED BY YOUR APPLICATION *** -->
-    <mkdir  dir="${build.home}/WEB-INF/lib"/>
-<!--
-    <copy todir="${build.home}/WEB-INF/lib" file="${foo.jar}"/>
--->
-
-    <!-- Copy static files from external dependencies as needed -->
-    <!-- *** CUSTOMIZE HERE AS REQUIRED BY YOUR APPLICATION *** -->
-
   </target>
 
 
@@ -472,7 +460,7 @@ includeantruntime="false"
 
 -->
 
-  <target name="reload" depends="compile"
+  <target name="reload" depends="remove, install"
    description="Reload application on servlet container">
 
     <reload url="${manager.url}"

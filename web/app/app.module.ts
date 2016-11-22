@@ -4,6 +4,7 @@ import { AppRouterModule } from './app-router.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav.component';
 import { EquipmentSearchComponent } from './equipment/equipment-search.component';
+import { EquipmentCardComponent } from './equipment/equipment-card.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { EquipmentSearchComponent } from './equipment/equipment-search.component
   declarations: [
     AppComponent,
     NavComponent,
-    EquipmentSearchComponent
+    EquipmentSearchComponent,
+    EquipmentCardComponent
   ],
   bootstrap: [
     AppComponent

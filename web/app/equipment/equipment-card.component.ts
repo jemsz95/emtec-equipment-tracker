@@ -1,5 +1,7 @@
-<div class="card">
-  <div class="card-content">
+import { Component } from '@angular/core';
 
-  </div>
-</div>
+@Component({
+  selector: 'equipment-card',
+  templateUrl: 'app/equipment/equipment-card.component.html'
+})
+export class EquipmentCardComponent {  }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { AppRouterModule } from './app-router.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav.component';
@@ -15,7 +15,7 @@ import { MovementRecordService } from './movement-record/movement-record.service
   imports: [
     BrowserModule,
     HttpModule,
-    ReactiveFormsModule,
+    FormsModule,
     AppRouterModule
   ],
   declarations: [

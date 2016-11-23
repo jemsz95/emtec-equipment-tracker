@@ -10,17 +10,20 @@ import { MovementRecordService } from '../movement-record/movement-record.servic
 })
 export class EquipmentCardComponent implements OnInit {  
   @Input() equipment: Equipment;
-  location: MovementRecord;
-  timeFromLastLocationTime: string;
+  
+  location: MovementRecord = null;
                                      
-  constructor(private movementRecordService: MovementRecordService) {  }
+  constructor(
+    private movementRecordService: MovementRecordService
+  ) { }
 
   ngOnInit() {
-    this.movementRecordService
+    console.log(this.equipment);
+    /*this.movementRecordService
         .getLastRecordOfEquipment(this.equipment)
         .subscribe(
           value => this.location = value[0] || null,
           error => console.error("lastLocationSubscription: Error"),
-        );
+        );*/
   }
 }

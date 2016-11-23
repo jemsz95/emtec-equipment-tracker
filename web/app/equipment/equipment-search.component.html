@@ -14,8 +14,8 @@
     <div class="columns">
       <div class="column is-half is-offset-one-quarter">
         <p class="control has-addons">
-          <input class="input is-expanded" type="search" placeholder="Search" [formControl]="searchTerms">
-          <a class="button">
+          <input class="input is-expanded" type="search" placeholder="Search" [(ngModel)]="searchText">
+          <a class="button" (click)="search()">
             <span class="icon"> 
               <i class="fa fa-search"></i>
             </span>
@@ -30,7 +30,7 @@
   <div class="container">
     <div class="columns">
       <div class="column is-half is-offset-one-quarter">
-        <equipment-card *ngFor="let equipment of equipmentList" equipment="equipment"></equipment-card>
+        <equipment-card *ngFor="let equipment of equipmentList" [equipment]="equipment"></equipment-card>
       </div>
     </div>
   </div>

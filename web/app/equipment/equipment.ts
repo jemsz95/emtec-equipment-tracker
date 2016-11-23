@@ -1,5 +1,6 @@
-export interface Equipment {
+export class Equipment {
   id: number;
   name: string;
-  tagId: number;
+  deviceId: number;
+  category: string;
 }

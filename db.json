@@ -1,0 +1,55 @@
+{
+  "devices": [
+    {
+      "id": 1,
+      "tag": "fd12ag4"
+    },
+    {
+      "id": 2,
+      "tag": "fa25ag7"
+    }
+  ],
+  "equipment": [
+    {
+      "id": 1,
+      "name": "Silla de ruedas",
+      "category": "Inmueble",
+      "deviceId": 1
+    },
+    {
+      "id": 2,
+      "name": "Silla de ruedas",
+      "category": "Inmueble",
+      "deviceId": 2
+    }
+  ],
+  "movementHistory": [
+    {
+      "id": 1,
+      "deviceId": 1,
+      "location": "Imagenología"
+    },
+    {
+      "id": 2,
+      "deviceId": 2,
+      "location": "Urgencias"
+    }
+  ],
+  "reports": [
+    {
+      "id": 1,
+      "equipmentId": 1,
+      "content": "Freno derecho roto"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "interactionDate": "2016-11-23T16:18:24.667Z",
+      "firstName": "Javier",
+      "lastName": "Meza",
+      "username": "jmeza",
+      "password": "emtc"
+    }
+  ]
+}

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { Equipment } from './equipment';
 import { EquipmentService } from './equipment.service';
 
@@ -9,9 +8,20 @@ import { EquipmentService } from './equipment.service';
 })
 export class EquipmentSearchComponent {
   equipmentList : Equipment[];
-  searchTerms = new FormControl();
+  searchText : string;
 
   constructor(
     private equipmentService : EquipmentService
   ) { }
+
+  search() {
+    this.equipmentService
+        .searchForEquipment(this.searchText)
+        .subscribe(
+          (data) => {this.equipmentList = data; console.log(data); },
+          (error) => console.error(error)
+        );
+
+    ;
+  }
 }

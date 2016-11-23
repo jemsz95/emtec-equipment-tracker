@@ -18,7 +18,7 @@ export class EquipmentSearchComponent {
     this.equipmentService
         .searchForEquipment(this.searchText)
         .subscribe(
-          (data) => {this.equipmentList = data; console.log(data); },
+          (data) => this.equipmentList = data,
           (error) => console.error(error)
         );
 

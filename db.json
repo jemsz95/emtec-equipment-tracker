@@ -23,16 +23,18 @@
       "deviceId": 2
     }
   ],
-  "movementHistory": [
+  "movement-record": [
     {
       "id": 1,
       "deviceId": 1,
-      "location": "Imagenología"
+      "location": "Imagenología",
+      "date": "2016-11-23T16:18:24.667Z"
     },
     {
       "id": 2,
       "deviceId": 2,
-      "location": "Urgencias"
+      "location": "Urgencias",
+      "date": "2016-11-23T16:18:24.667Z"
     }
   ],
   "reports": [

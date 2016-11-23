@@ -12,10 +12,11 @@
       <br/>
       <br/>
       <span>Location: </span>
-      <span>{{ lastLocation.name }}</span>
+      <span>{{ lastMovement?.location }}</span>
+      <span *ngIf="!lastMovement">Unknown</span>
     </div>
     <div class="column is-narrow">
-      <span>{{ location.time | date:shortTime }}</span> 
+      <span>{{ lastMovement?.date | timeFromNow }}</span> 
     </div>
   </div>
 </div>

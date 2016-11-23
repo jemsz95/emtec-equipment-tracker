@@ -1,7 +1,8 @@
 export class MovementRecord {
-  locationName: string;
-  date: Date;
-  time: Date;
-  equipmentId: number;
-  deviceId: number;
+  constructor(
+    public id: number,
+    public deviceId: number,
+    public location: string,
+    public date: Date
+  ) { }
 }

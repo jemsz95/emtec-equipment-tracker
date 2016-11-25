@@ -21,6 +21,30 @@
       "name": "Silla de ruedas",
       "category": "Inmueble",
       "deviceId": 2
+    },
+    {
+      "id": 3,
+      "name": "Camilla",
+      "category": "Inmueble",
+      "deviceId": 3
+    },
+    {
+      "id": 4,
+      "name": "EKG",
+      "category": "Inmueble",
+      "deviceId": 4
+    },
+    {
+      "id": 5,
+      "name": "Almohada",
+      "category": "Inmueble",
+      "deviceId": 5
+    },
+    {
+      "id": 6,
+      "name": "Suero",
+      "category": "Inmueble",
+      "deviceId": 6
     }
   ],
   "movement-record": [
@@ -35,6 +59,30 @@
       "deviceId": 2,
       "location": "Urgencias",
       "date": "2016-11-23T16:18:24.667Z"
+    },
+    {
+      "id": 3,
+      "deviceId": 3,
+      "location": "Imagenología",
+      "date": "2016-11-23T21:12:34.107Z"
+    },
+    {
+      "id": 4,
+      "deviceId": 4,
+      "location": "Urgencias",
+      "date": "2016-11-23T21:12:34.107Z"
+    },
+    {
+      "id": 5,
+      "deviceId": 5,
+      "location": "Imagenología",
+      "date": "2016-11-23T21:13:15.397Z"
+    },
+    {
+      "id": 6,
+      "deviceId": 6,
+      "location": "Consultorios piso 4",
+      "date": "2016-11-23T21:13:15.397Z"
     }
   ],
   "reports": [

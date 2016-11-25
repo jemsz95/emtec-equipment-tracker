@@ -21,7 +21,5 @@ export class EquipmentSearchComponent {
           (data) => this.equipmentList = data,
           (error) => console.error(error)
         );
-
-    ;
   }
 }

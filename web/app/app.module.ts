@@ -6,11 +6,12 @@ import { FormsModule } from '@angular/forms';
 import { AppRouterModule } from './app-router.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav.component';
-import { TimeFromNowPipe } from './time-from-now.pipe';
 import { EquipmentSearchComponent } from './equipment/equipment-search.component';
 import { EquipmentCardComponent } from './equipment/equipment-card.component';
-import { EquipmentService } from './equipment/equipment.service';
 
+import { TimeFromNowPipe } from './time-from-now.pipe';
+
+import { EquipmentService } from './equipment/equipment.service';
 import { MovementRecordService } from './movement-record/movement-record.service';
 
 
